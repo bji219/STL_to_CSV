@@ -28,6 +28,7 @@ if line.strip().startswith("vertex"):
     s_line = s_line[1:]
     csv_lines = ",".join(s_line)
     f.write(csv_lines)
+...
 ```
 
 I wanted to convert multiple .stl files to multiple .csv files at once, so I used some bash shortcuts to turn the Python script into a function.
@@ -37,7 +38,28 @@ I wanted to convert multiple .stl files to multiple .csv files at once, so I use
 alias csv_make="cd ~/Documents/STL_to_CSV && python3 STL_Cloud.py"
 ```
 
-Running ```csv_make``` will find all .stl files within the specified directory and convert them into .csv files!
+The Python script will now look for .stl files within the working directory of the Py script.
+```python
+# Open STL Data
+for x in os.listdir():
+    if x.endswith(".stl"):
+        # Prints only text file present in My Folder
+        print("Converting " + x + " to .csv file.")
+...
+```
+Running ```csv_make``` will find all .stl files within the specified directory and convert them into .csv files! Example output from above:
+```
+-0.0393849,0.023303038,0.03564223
+-0.039511416,0.02082098,0.034457665
+-0.03597968,0.020643527,0.036249146
+-0.036101937,0.022603136,0.037045743
+-0.0393849,0.023303038,0.03564223
+-0.03597968,0.020643527,0.036249146
+```
+The six points are now in .csv format. 
+
+Command line output:
+[](stl_csv_ex.png)
 
 
 
