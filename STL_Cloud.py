@@ -1,4 +1,9 @@
 import os
+import time
+
+# Start timer
+start = time.time()
+
 # Test
 # Open STL Data
 for x in os.listdir():
@@ -21,3 +26,8 @@ for x in os.listdir():
                     s_line = s_line[1:]
                     csv_lines = ",".join(s_line)
                     f.write(csv_lines)
+
+end = time.time()
+elapsed = str("{:.2f}".format(end - start))
+print("")
+print("Process complete. Run time: " + elapsed + " seconds.")
