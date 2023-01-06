@@ -59,7 +59,8 @@ Running ```csv_make``` will find all .stl files within the specified directory a
 The six points are now in .csv format. 
 
 Command line output:
-[](stl_csv_ex.png)
+
+![](stl_csv_ex.png)
 
 
 
